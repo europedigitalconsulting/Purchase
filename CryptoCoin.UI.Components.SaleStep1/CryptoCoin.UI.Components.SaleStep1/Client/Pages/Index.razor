@@ -1,0 +1,102 @@
+﻿@page "/"
+
+
+<p class="lead">
+    Vous souhaitez échanger des jetons, merci d’indiquer le nombre de jetons que vous
+</p>
+
+<CollapsePannel>
+    <CollapsePannelItem Title=@title1>    
+
+        <div class="col-md-10 order-md-1">
+           
+            <form class="needs-validation" novalidate="">
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">
+                            Nombre de jetons que vous souhaitez échanger
+                        </label>
+                        <input type="number" class="form-control" id="nbrJetons" placeholder="" value="0" required="" style="width: 30% !important;">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>                  
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <label for="country">
+                            Monnaie de retrait
+                        </label>
+                        <select class="custom-select d-block w-100" id="country" required="" style="width: 40% !important;">
+                            <option value="">Choose...</option>
+                            <option>Euro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid Monnaie.
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <div class="row">
+                    <ul class="list-group mb-6 col-md-8">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">
+                                    Montant à percevoir dans la monnaie de retrait
+                                </h6>
+                                @*<small class="text-muted">Brief description</small>*@
+                            </div>
+                            <span class="text-muted">$12</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">
+                                    Montant des frais
+                                </h6>
+                                @*<small class="text-muted">Brief description</small>*@
+                            </div>
+                            <span class="text-muted">$8</span>
+                        </li>
+
+                    </ul>
+                </div>
+              
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg " type="submit" style="font-size: 1rem !important;">
+                    Sélectionnez le mode de paiement
+                </button>
+            </form>
+        </div>
+    </CollapsePannelItem>
+
+    <CollapsePannelItem Title=@title2>
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <p class="lead" style="font-size: 1rem !important;">@titlePart2</p>
+        <a class="btn btn-lg btn-primary" style="font-size: 1rem !important;" href="" role="button">@titleButton2</a>
+    </CollapsePannelItem>
+</CollapsePannel>
+
+
+
+@code{
+    CollapsePannel CollapsePannel;
+    bool showSecondPannel;
+
+    static int maxVal = 1500;
+    string title1 = "Vous souhaitez acheter pour moins de "+ maxVal + " jetons";
+    string title2 = "Vous souhaitez acheter pour plus de "+ maxVal + " jetons";
+    string titleButton2 = "Chat en ligne";
+
+    string titlePart2 = "Pour échanger pour plus de"+ maxVal+" jetons, veuillez nous contacter";
+
+
+}
