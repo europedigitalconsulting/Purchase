@@ -1,0 +1,31 @@
+﻿
+    <p>@question.QuestionText</p>
+
+    @foreach (var item in question.purchaseOptions)
+    {
+        <div>
+
+            <table>
+                <tr>
+                    <td>
+                        <input type="radio" name="@item.purchaseName" id="@item.purchaseValue" value="@item.purchaseValue" @onchange="SelectionChanged" checked=@(selectedChoiceText.Equals(item.purchaseName, StringComparison.OrdinalIgnoreCase)) />
+                    </td>
+                    <td>
+                        <img src="@item.purchaseImageUrl" style="width:50px;height:50px;">
+                    </td>
+                    <td class="col-md-8">
+                        <label for="@item">@item.purchaseName</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+    <div>
+        <label>Votre choix est :  @selectedChoiceText</label>
+    </div>
+
+    <button type="button" class="btn btn-primary" @onclick="@OnSubmit">Valider</button>
+
+
+
+
