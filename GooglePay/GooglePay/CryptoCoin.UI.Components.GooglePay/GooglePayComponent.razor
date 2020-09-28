@@ -1,0 +1,27 @@
+﻿
+@inject IJSRuntime JSRuntime;
+
+<div id="containerGooglePay" class="GooglePayComponent" @onload="onGooglePayLoaded" style="display:@visibleButtonGooglePay;">
+    <input type="hidden" id="price" value="@price" />
+</div>
+
+<div id="googlepayDiv" style="display:@visibleDivGooglePay;">
+    <h2>pré - Facture</h2>
+    <p>Price : @price</p>
+    <button @onclick="onGooglePayLoaded">Valider</button>
+</div>
+
+
+@code{
+    public float price = 1000;
+    string visibleDivGooglePay = "block";
+    string visibleButtonGooglePay = "none";
+    public async Task onGooglePayLoaded()
+    {
+        await JSRuntime.InvokeVoidAsync("onGooglePayLoaded", price);
+        visibleDivGooglePay = "none";
+        visibleButtonGooglePay = "block";
+    }
+}
+
+
