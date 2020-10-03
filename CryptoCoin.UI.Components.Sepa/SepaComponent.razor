@@ -1,0 +1,101 @@
+﻿<div class="sepaComponent">
+    <div class="row">
+        <div class="col-md-6" id="debiteurPart">
+            <p>Référence unique du mandat : <b>@sepa.referenceMandat</b></p>
+            <h3 style="color:darkorange"><b>Débiteur :</b></h3>
+            <table>
+                <tr>
+                    <td><p>Nom et prénom :</p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Adresse :</p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurAdresse" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Ville :</p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurVille" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Cp :</p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurCp" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Pays :</p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurPays" />
+                    </td>
+                </tr>
+            </table>
+
+            <p>Vos Coordonnées bancaires :</p>
+            <table>
+                <tr>
+                    <td><p>IBAN : </p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurIBAN" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>BIC : </p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurBIC" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr>
+                    <td><p>Signé à : </p></td>
+                    <td>
+                        <input type="text" id="@sepa.debiteur.debiteurAdresseSignature" />
+                    </td>
+                    <td>
+                        <p>Le : @DateTime.Now.Day @DateTime.Now.ToString("MMM") @DateTime.Now.Year</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-6" id="creancierPart">
+            <p>ID créancier SEPA : <b>@sepa.creancier.creancierID</b></p>
+            <h3 style="color:darkorange"><b>Créancier :</b></h3>
+            <table>
+                <tr>
+                    <td><p>Nom : </p></td>
+                    <td>
+                        <p>@sepa.creancier.creancierName</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Adresse : </p></td>
+                    <td>
+                        <p>@sepa.creancier.creancierAdresse</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Pays : </p></td>
+                    <td>
+                        <p>@sepa.creancier.creancierPays</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <button type="button" class="btn btn-primary" @onclick="@OnSubmitSepa">Valider</button>
+    </div>
+
+
+</div>
+
+@code{
+   
+}
