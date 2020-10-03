@@ -1,0 +1,32 @@
+﻿
+<div id="stepCheque" style="display:@visibiliteCheque;">
+    <div class="jumbotron">
+        <h1>@titleCheque</h1>
+        <p class="lead">@descriptionCheque</p>
+    </div>
+
+    <div>
+        <p>
+            <b>@title2Cheque</b>
+        </p>
+        <table>
+            <tr>
+                <td><p><b>Nom : </b></p></td>
+                <td><p>@nomCheque</p></td>
+            </tr>
+            <tr>
+                <td><p><b>Adresse : </b></p></td>
+                <td><p>@adresseCheque</p></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@code{
+    string visibiliteCheque = "block";
+    string titleCheque = "Paiement par chèque";
+    string descriptionCheque = "Attention la transaction ne sera validée qu’après traitement de votre réglement";
+    string title2Cheque = "Merci d’adresse votre chèque à";
+    string nomCheque = "France Digital Consulting";
+    string adresseCheque = "3 RUE MRX DORMOY 91480 Quincy Sous senart Pays : FRANCE";
+}
